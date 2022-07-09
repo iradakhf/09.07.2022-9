@@ -7,22 +7,35 @@ namespace ConsoleApp17
         {
             string[] BasicExpertPro = { "basic", "expert", "pro" };
             string word = "pro";
+            int i = 0;
 
             ProDocumentProgram pro = new ProDocumentProgram();//pro sozune uygun muvafiq obyekt pro
-            int i = 0;
+            ExpertDocumentProgram expert = new ExpertDocumentProgram();
+            DocumentProgram basic = new DocumentProgram();
+            
             
             while (i <= BasicExpertPro.Length)
             {
-                if (word==BasicExpertPro[i])
+                if (word=="pro")
                 {
                     pro.OpenDocument();
                     pro.EditDocument();
                     pro.SaveDocument();
                     break;
                 }
+                else if (word=="basic")
+                {
+                    basic.OpenDocument();
+                    basic.EditDocument();
+                    basic.SaveDocument();
+                    break;
+                }
                 else
                 {
-                    Console.WriteLine(" ");
+                    basic.OpenDocument();
+                    basic.EditDocument();
+                    basic.SaveDocument();
+                    break;
                 }
                 i++;
             }
